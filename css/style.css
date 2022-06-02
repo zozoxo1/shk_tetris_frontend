@@ -1,0 +1,97 @@
+:root {
+    --selected-color: blue;
+    --not-selected-top-bottom: rgb(53, 53, 53);
+    --not-selected-left-right: rgb(40, 40, 40);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body,html {
+    height: 100vh;
+}
+
+#main-section {
+    width: 100%;
+    height: 100vh;
+    background: #000030;
+    position: relative;
+}
+
+.horizontal-top {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    border-top: 50vh solid var(--not-selected-top-bottom);
+}
+
+.horizontal-top.selected {
+    border-top: 50vh solid var(--selected-color);
+}
+
+.horizontal-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    border-bottom: 50vh solid var(--not-selected-top-bottom);
+}
+
+.horizontal-bottom.selected {
+    border-bottom: 50vh solid var(--selected-color);
+}
+
+.left {
+    position: absolute;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    background: var(--not-selected-left-right);
+    display: inline-block;
+}
+
+.left.selected {
+    background: var(--selected-color);
+}
+
+.right {
+    position: absolute;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    background: var(--not-selected-left-right);
+    display: inline-block;
+}
+
+.right.selected {
+    background: var(--selected-color);
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--not-selected-left-right);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--not-selected-top-bottom);
+}
+
+button svg {
+    color: blue;
+}
